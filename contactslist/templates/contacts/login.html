@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="{% static 'contacts/login.css' %}">
+    <title>Contact - Login</title>
+    <script src="{% static 'contacts/jquery/jquery-3.4.1.min.js' %}"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/svg.js/3.1.1/svg.min.js"></script>
+
+</head>
+<body>
+    
+{% if session %}
+    <nav class="custom-navbar">
+        <a class="brand" href="{% url 'index' %}">Contacts</a>
+        <div class="nav-items">
+            <ul>
+                <li>
+                    <a href="#">
+                        <i class="far fa-user"></i>
+                        {{username | capfirst}}</a>
+                </li>
+                <li>
+                    <a href="{% url 'logout' %}">
+                        <i class="fas fa-sign-out-alt"></i>
+                        Logout</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+{% endif %}
+<div class="login-container">
+    <div class="login-wrapper">
+        
+        <div class="login-card"> 
+            <h2 class="login-title"></h2>
+            {% if error %}
+            <h5 class="alert" style="color: #f44336; margin-left: 65px">
+                {{message}}
+            </h5>
+            {% endif %}
+            <form action="{% url 'index' %}" method="post">
+                {% csrf_token %}
+                <div class="input-group">
+                    <label>Username:</label>
+                    <input autocomplete="username" name="username" placeholder="Enter username" type="text">
+                </div>
+                <div class="input-group">
+                    <label>Password:</label>
+                    <input autocomplete="current-password" name="password" placeholder="Enter password" type="password">
+                </div>
+                <button class="submit-button" type="submit">Submit</button>
+            </form>
+        </div>
+    </div>
+</div>
+<div id="login"></div>
+    <script>
+    var login = SVG().addTo('.login-title').size(336, 50);
+    var rect = login.rect(336, 50).attr({ fill: 'transparent' });
+    rect.stroke({color: 'cyan', width: 8}).attr({'stroke-dashoffset': 3000, 'stroke-dasharray': 1025, 'stroke-linecap': 'round', 'stroke-linejoin': 'round'}).addClass('path');
+
+    var text = login.text('Login');
+    text.font({anchor: 'middle', size: 30, family: 'sans-serif'}).fill({ color: 'white' });
+
+    var containerWidth = 336;  // Adjusted to match the SVG size
+    var containerHeight = 50;  // Adjusted to match the SVG size
+    var textWidth = text.bbox().width;
+    var textHeight = text.bbox().height;
+    var centerX = (containerWidth - textWidth) / 2;
+    var centerY = (containerHeight - textHeight) / 2;
+
+    text.move(centerX, centerY);  
+
+    </script>
+</body>
+</html>

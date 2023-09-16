@@ -1,0 +1,97 @@
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="{% static 'contacts/contacts.css' %}">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/svg.js/3.1.1/svg.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+</head>
+<body>
+    <div class="custom-container">
+        <div class="custom-card-header">
+            <h6 class="header-title"></h6>
+        </div>
+
+        <div class="add-user-section">
+            <div class="add-user-button-wrapper">
+                <a href="add">
+                    <button class="add-user-button">
+                        Add Contact
+                    </button>
+                </a>
+            </div>
+
+            <div class="log-out-button-wrapper">
+                <a href="{% url 'logout' %}">
+                    <button class="logout-button">
+                        Logout
+                    </button>
+                </a>
+        </div>        
+
+
+        <div class="contact-table-section">
+            <table class="contact-table">
+                <thead>
+                <tr>
+                    <th scope="col">First name</th>
+                    <th scope="col">Last name</th>
+                    <th scope="col">Phone number</th>
+                    <th scope="col">Phone Type</th>
+                    <th scope="col">Action</th>
+                </tr>
+                </thead>
+                <tbody>
+                {% for contact in contacts %}
+                <tr>
+                    <td scope="row">{{contact.first_name}}</td>
+                    <td>{{contact.last_name}}</td>
+                    <td>{{contact.phonenumber}}</td>
+                    <td>
+                        {% if contact.phone_type != None %}
+                            {{ contact.phone_type }}
+                        {% else %}
+                            N/A
+                        {% endif %}
+                    </td>                    
+                    <td>
+                        <a class="edit-button" href="{% url 'edit_contact' contact.id %}">
+                            <i class="fas fa-edit"></i>
+                        </a>
+                        <a class="delete-button" href="{% url 'delete_contact' contact.id %}">
+                            <i class="fas fa-trash"></i>
+                        </a>
+                    </td>
+                </tr>
+                {% empty %}
+                <tr>
+                    <td colspan="5" class="empty-contact-message">No contacts added</td>
+                </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <div id="Contacts"></div>
+    
+    <script>
+    var contact = SVG().addTo('.custom-card-header').size(800, 100);
+    var rect = contact.rect(800, 100).attr({ fill: 'transparent' });
+    rect.stroke({color: 'cyan', width: 8}).attr({'stroke-dashoffset': 3000, 'stroke-dasharray': 1025, 'stroke-linecap': 'round', 'stroke-linejoin': 'round'}).addClass('path');
+
+    var text = contact.text('Contacts');
+    text.font({anchor: 'middle', size: 40, family: 'sans-serif'}).fill({ color: 'white' });
+
+    var containerWidth = 800;  
+    var containerHeight = 100;  
+    var textWidth = text.bbox().width;
+    var textHeight = text.bbox().height;
+    var centerX = (containerWidth - textWidth) / 2;
+    var centerY = (containerHeight - textHeight) / 2;
+
+    text.move(centerX, centerY);  
+
+    </script>
+</body>
+</html>

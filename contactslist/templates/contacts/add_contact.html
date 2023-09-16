@@ -1,0 +1,156 @@
+{% load static %}
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="{% static 'contacts/add_contact.css' %}">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/svg.js/3.1.1/svg.min.js"></script>
+
+</head>
+<body>
+    <div class="custom-container">
+        <div class="custom-card-header">
+            <h6 class="header-title"></h6>
+        </div>
+        <div class="custom-card-body">
+            <form action="{% url 'add_contact' %}" method="post" class="custom-form">
+                {% csrf_token %}
+                <div class="row">
+                    <div class="prefix-group">
+                        <label class="prefix-label">Prefix</label>
+                        <input type="text" class="prefix-input" placeholder="Prefix" name="prefix">
+                    </div>
+                    <div class="first-name-group">
+                        <label for="firstname" class="first-name-label">First Name</label>
+                        <input type="text" class="first-name-input" placeholder="Firstname" name="first_name" id="first_name">
+                    </div>
+                    <div class="sur-name-group">
+                        <label class="sur-name-label">Sur Name</label>
+                        <input type="text" class="sur-name-input" placeholder="Surname" name="sur_name">
+                    </div>
+                    <div class="last-name-group">
+                        <label class="last-name-label">Last Name</label>
+                        <input type="text" class="last-name-input" placeholder="Lastname" name="last_name">
+                    </div>
+                    <div class="suffix-group">
+                        <label class="suffix-label">Suffix</label>
+                        <input type="text" class="suffix-input" placeholder="Suffix" name="suffix">
+                    </div>
+                </div>
+                <hr class="custom-hr">
+                <div class="row contact-company-row">
+                    <!-- Contact Details -->
+                    <div class="contact-details">
+                        <h6 class="contact-title">Contact Details</h6>
+                        <div class="phone-group">
+                            <input type="phone" class="phone-input" placeholder="Phone number" name="phonenumber">
+                        </div>
+                        <div class="phone-choice-group">
+                                {{ form.phone_type }}
+                            </select>
+                        </div>
+                    </div>
+                    <div class="vertical-line"></div>
+                    <!-- Company Details -->
+                    <div class="company-details">
+                        <h6 class="company-title">Company Details</h6>
+                        <div class="company-name-group">
+                            <input type="text" class="input-company-name" placeholder="Company name" name="company_name">
+                        </div>
+                    </div>
+                </div>
+
+                <hr class="custom-hr">
+
+                <div class="row address-email-row">
+                    <!-- Address Details -->
+                    <div class="address-details">
+                        <h6 class="address-title">Address Details</h6>
+                        <div class="address-group">
+                            <input type="address" class="address-input" placeholder="Address" name="address">
+                        </div>
+                        <div class="address-choice-group">
+                                {{ form.address_type }}
+                            </select>
+                        </div>
+                    </div>
+                    <div class="vertical-line"></div>
+                    <!-- Email Details -->
+                    <div class="email-details">
+                        <h6 class="email-title">Email Details</h6>
+                        <div class="email-name-group">
+                            <input type="text" class="input-email-name" placeholder="Email" name="email">
+                        </div>
+                        <div class="email-choice-group">
+                                {{ form.email_type }}
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <hr class="custom-hr">
+                <div class="row anniversary-relationship-row">
+                    <!-- Anniversary Details -->
+                    <div class="occasion-details">
+                        <h6 class="occasion-title">Anniversary Details</h6>
+                        <div class="occasion-group">
+                            <input type="date" class="input-anniversary-date" name="occasion_date">
+                        </div>
+                        <div class="occasion-choice-group">
+                                {{ form.occasion }}
+                            </select>
+                        </div>
+                    </div>
+                    <div class="vertical-line"></div>
+                    <!-- Relation Details -->
+                    <div class="relation-details">
+                        <h6 class="relation-title">Relationship Details</h6>
+                        <div class="relation-choice-group">
+                                {{ form.relation }}
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                
+                <hr class="custom-hr">
+                <div class="row">
+                    <div class="description-group">
+                        <h6 class="description-title">Description</h6>
+                        <textarea name="description" rows="5" class="textarea-description"></textarea>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="button-group">
+                        <button type="submit" class="btn btn-success">Finish</button>
+                        
+                        <button class="back-button"> 
+                            Back
+                        <a href="{% url 'index' %}">
+                        </button>
+                        </a>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div id="add-a-contact"></div>
+    <script>
+    var addcontact = SVG().addTo('.custom-card-header').size(800, 100);
+    var rect = addcontact.rect(800, 100).attr({ fill: 'transparent' });
+    rect.stroke({color: 'cyan', width: 8}).attr({'stroke-dashoffset': 3000, 'stroke-dasharray': 1025, 'stroke-linecap': 'round', 'stroke-linejoin': 'round'}).addClass('path');
+
+    var text = addcontact.text('Add a Contact');
+    text.font({anchor: 'middle', size: 40, family: 'sans-serif'}).fill({ color: 'white' });
+
+    var containerWidth = 800;  // Adjusted to match the SVG size
+    var containerHeight = 100;  // Adjusted to match the SVG size
+    var textWidth = text.bbox().width;
+    var textHeight = text.bbox().height;
+    var centerX = (containerWidth - textWidth) / 2;
+    var centerY = (containerHeight - textHeight) / 2;
+
+    text.move(centerX, centerY);  
+
+    </script>
+</body>
+</html>

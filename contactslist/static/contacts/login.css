@@ -1,0 +1,119 @@
+/* Login Container */
+.login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f5f5f5;
+}
+
+.login-wrapper {
+        width: 100%;
+        max-width: 400px;
+        margin: 2rem auto;
+        padding: 1rem;
+        background-color: #fbfbfb;
+        border-radius: 12px;
+        box-shadow: 0 4px 8px #4F8BFF;
+        justify-content: center;
+        align-items: center;
+    }
+
+.login-card {
+    background-color: #fff;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+
+/* Input Group */
+.input-group {
+    margin-bottom: 1rem;
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.login-title {
+    background: #4F8BFF;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 0rem;
+    margin-bottom: 1rem;
+
+}
+
+.path {
+    animation: dash 5s ease-in-out infinite;
+}
+
+@keyframes dash {
+    from {
+        stroke-dashoffset: 3000;
+    }
+
+    to {
+        stroke-dashoffset: 950;
+    }
+}
+
+.submit-button {
+    color: #ffffff;
+    font-weight: bold;
+    width: 130px;
+    height: 40px;
+    line-height: 42px;
+    padding: 0;
+    border: none;
+    background: #4F8BFF;
+    background: linear-gradient(0deg, #4F8BFF 0%, #4F8BFF 100%);
+    position: relative;
+    /* Add this line */
+}
+
+.submit-button:hover {
+    color: #4F8BFF;
+    background: transparent;
+    box-shadow: none;
+    font-weight: bold;
+}
+
+.submit-button:before,
+.submit-button:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 2px;
+    width: 0;
+    background: #4F8BFF;
+    box-shadow:
+        -1px -1px 5px 0px #fff,
+        7px 7px 20px 0px #0003,
+        4px 4px 5px 0px #0002;
+    transition: 400ms ease all;
+}
+
+.submit-button:after {
+    right: inherit;
+    top: inherit;
+    left: 0;
+    bottom: 0;
+}
+
+.submit-button:hover:before,
+.submit-button:hover:after {
+    width: 100%;
+    transition: 800ms ease all;
+}

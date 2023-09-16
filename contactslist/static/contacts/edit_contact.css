@@ -1,0 +1,648 @@
+/* General Styles */
+html,
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f5f5f5;
+    margin: 0;
+    padding: 0;
+    font-size: 18px;
+}
+
+/* Container */
+.custom-container {
+    max-width: 800px;
+    margin: 2rem auto;
+    padding: 1rem;
+    background-color: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px #4F8BFF;
+}
+
+/* Card Header */
+.custom-card-header {
+    background: #4F8BFF;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: auto;
+
+}
+
+.path {
+    animation: dash 5s ease-in-out infinite;
+}
+
+@keyframes dash {
+    from {
+        stroke-dashoffset: 3000;
+    }
+
+    to {
+        stroke-dashoffset: 950;
+    }
+}
+
+.header-title {
+    margin: 0;
+    font-size: 1.2rem;
+}
+
+/* Card Body */
+.custom-card-body {
+    padding: 1rem;
+}
+
+/* Form */
+.custom-form {
+    margin-bottom: 1.5rem;
+}
+
+/* Row */
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    margin-right: -15px;
+    margin-left: -15px;
+}
+
+/* hr */
+
+.custom-hr {
+    display: flex;
+    flex-wrap: wrap;
+    margin-right: -15px;
+    margin-left: -15px;
+}
+
+/* New Class for Specific Row */
+.contact-company-row {
+    display: flex;
+    align-items: flex-start;
+}
+
+/* Existing Vertical Line Class */
+.vertical-line {
+    width: 1px;
+    height: 120px;
+    /* Takes the height of the container */
+    background-color: rgb(0, 0, 0, 0.1);
+    margin-left: center;
+    /* Adds some space on the left and right of the line */
+}
+
+.prefix-group {
+    margin-bottom: 0.2rem;
+    margin-top: 0.5rem;
+    margin-left: 0px;
+    flex: 1;
+}
+
+.prefix-label {
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    display: block;
+}
+
+.prefix-input {
+    width: 99%;
+    padding: 0.7rem;
+    border: 1px solid #4F8BFF;
+    border-radius: 4px;
+    transition: border-color 0.3s ease;
+}
+
+/* First Name Group */
+.first-name-group {
+    margin-bottom: 0.2rem;
+    margin-top: 0.5rem;
+    margin-left: 0px;
+    flex: 1;
+}
+
+/* First Name Label */
+.first-name-label {
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    display: block;
+}
+
+/* First Name Input */
+.first-name-input {
+    width: 99%;
+    padding: 0.7rem;
+    border: 1px solid #4F8BFF;
+    border-radius: 4px;
+    transition: border-color 0.3s ease;
+}
+
+.sur-name-group {
+    margin-bottom: 0.2rem;
+    margin-top: 0.5rem;
+    margin-left: 0px;
+    flex: 1;
+}
+
+.sur-name-label {
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    display: block;
+}
+
+.sur-name-input {
+    width: 99%;
+    padding: 0.7rem;
+    border: 1px solid #4F8BFF;
+    border-radius: 4px;
+    transition: border-color 0.3s ease;
+}
+
+/* Last Name Group */
+.last-name-group {
+    margin-bottom: 0.2rem;
+    margin-top: 0.5rem;
+    margin-left: 0px;
+    flex: 1;
+}
+
+/* Last Name Label */
+.last-name-label {
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    display: block;
+}
+
+/* Last Name Input */
+.last-name-input {
+    width: 99%;
+    padding: 0.7rem;
+    border: 1px solid #4F8BFF;
+    border-radius: 4px;
+    transition: border-color 0.3s ease;
+}
+
+.suffix-group {
+    margin-bottom: 0.2rem;
+    margin-top: 0.5rem;
+    margin-left: 0px;
+    flex: 1;
+}
+
+.suffix-label {
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    display: block;
+}
+
+.suffix-input {
+    width: 100%;
+    padding: 0.7rem;
+    border: 1px solid #4F8BFF;
+    border-radius: 4px;
+    transition: border-color 0.3s ease;
+}
+
+/* Container for Contact*/
+.contact-details {
+    margin-bottom: 0.5rem;
+    flex: 1;
+    margin-left: 10px;
+}
+
+/* Contact Title */
+.contact-title {
+    margin-top: 0rem;
+    margin-bottom: 0.5rem;
+    flex: 1;
+    font-size: 18px;
+    margin-left: -10px;
+}
+
+/* Phone Group */
+
+
+/* Phone Input */
+.phone-input {
+    width: 99%;
+    padding: 0.7rem;
+    border: 1px solid #4F8BFF;
+    border-radius: 4px;
+    transition: border-color 0.3s ease;
+    margin-left: -10px;
+    flex: 1;
+}
+
+/* Phone Choice Group */
+
+
+/* Phone Choice Input and Select */
+
+
+.phone-choice-select {
+    width: 99%;
+    padding: 0.7rem;
+    border: 1px solid #4F8BFF;
+    border-radius: 4px;
+    transition: border-color 0.3s ease;
+    margin-left: -10px;
+    flex: 1;
+}
+
+/* Company Details */
+.company-details {
+    margin-bottom: 0.5rem;
+    flex: 1;
+    margin-left: 10px;
+}
+
+/* Title Company Group */
+
+.company-title {
+    margin-top: 0rem;
+    margin-bottom: 0.5rem;
+    flex: 1;
+    font-size: 18px;
+    margin-left: 0px;
+    font-weight: 600;
+}
+
+/* Input Company Name */
+.input-company-name {
+    width: 100%;
+    padding: 0.7rem;
+    border: 1px solid #4F8BFF;
+    border-radius: 4px;
+    transition: border-color 0.3s ease;
+    margin-left: 0px;
+    flex: 1;
+}
+
+.anniversary-details {
+    margin-bottom: 0.5rem;
+    flex: 1;
+    margin-left: 10px;
+}
+
+.anniversary-title {
+    margin-top: 0rem;
+    margin-bottom: 0.5rem;
+    flex: 1;
+    font-size: 18px;
+    margin-left: 0px;
+}
+
+/* .anniversary-date-group {
+        margin-bottom: 1.5rem;
+        flex: 1;
+        margin-left: 5px;
+        width: 100%;
+    } */
+
+.input-anniversary-date {
+    width: 100%;
+    padding: 0.7rem;
+    border: 1px solid #4F8BFF;
+    border-radius: 4px;
+    transition: border-color 0.3s ease;
+    margin-left: 0px;
+    flex: 1;
+}
+
+/* .anniversary-choice-group {
+        margin-bottom: 1.5rem;
+        flex: 1;
+        margin-left: 40px;
+    } */
+
+.select-anniversary-choice {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid #4F8BFF;
+    border-radius: 4px;
+    transition: border-color 0.3s ease;
+    margin-left: 47px;
+    flex: 1;
+}
+
+.relationship-details {
+    margin-bottom: 0.5rem;
+    flex: 1;
+    margin-left: 10px;
+}
+
+.relationship-title {
+    margin-top: 0rem;
+    margin-bottom: 0.5rem;
+    flex: 1;
+    font-size: 18px;
+    margin-left: 15px;
+    font-weight: 600;
+}
+
+/* .relationship-choice-group {
+        margin-bottom: 1.5rem;
+        flex: 1;
+        margin-left: 80px;
+    } */
+
+.select-relationship-choice {
+    width: 330%;
+    padding: 0.7rem;
+    border: 1px solid #4F8BFF;
+    border-radius: 4px;
+    transition: border-color 0.3s ease;
+    margin-left: 15px;
+
+}
+
+.description-group {
+    margin-bottom: 0.5rem;
+    flex: 1;
+    margin-left: 10px;
+}
+
+.description-title {
+    margin-top: 0rem;
+    margin-bottom: 0.5rem;
+    flex: 1;
+    font-size: 18px;
+    margin-left: -10px;
+}
+
+.textarea-description {
+    width: 101%;
+    padding: 0.7rem;
+    border: 1px solid #4F8BFF;
+    border-radius: 4px;
+    transition: border-color 0.3s ease;
+    margin-left: -10px;
+    flex: 1;
+}
+
+
+/* Styles for Submit Button */
+
+.btn-success {
+    color: #ffffff;
+    font-weight: bold;
+    width: 130px;
+    height: 40px;
+    line-height: 42px;
+    padding: 0;
+    border: none;
+    background: #4F8BFF;
+    background: linear-gradient(0deg, #4F8BFF 0%, #4F8BFF 100%);
+    position: relative;
+    /* Add this line */
+}
+
+.btn-success:hover {
+    color: #4F8BFF;
+    background: transparent;
+    box-shadow: none;
+    font-weight: bold;
+}
+
+.btn-success:before,
+.btn-success:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 2px;
+    width: 0;
+    background: #4F8BFF;
+    box-shadow:
+        -1px -1px 5px 0px #fff,
+        7px 7px 20px 0px #0003,
+        4px 4px 5px 0px #0002;
+    transition: 400ms ease all;
+}
+
+.btn-success:after {
+    right: inherit;
+    top: inherit;
+    left: 0;
+    bottom: 0;
+}
+
+.btn-success:hover:before,
+.btn-success:hover:after {
+    width: 100%;
+    transition: 800ms ease all;
+}
+
+/* Styles for Horizontal Rule */
+.custom-hr {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    border: 0;
+    border-top: 1px solid #ccc;
+}
+
+/* Media Queries for Larger Screens */
+@media (min-width: 768px) {
+    body {
+        font-size: 20px;
+    }
+}
+
+
+.back-button {
+    color: #ffffff;
+    font-weight: bold;
+    appearance: none;
+    width: 130px;
+    height: 40px;
+    line-height: 42px;
+    border: none;
+    background: #4F8BFF;
+    background: linear-gradient(0deg, #4F8BFF 0%, #4F8BFF 100%);
+    position: relative;
+    /* Add this line */
+}
+
+.back-button:hover {
+    color: #4F8BFF;
+    background: transparent;
+    box-shadow: none;
+    font-weight: bold;
+}
+
+.back-button:before,
+.back-button:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 2px;
+    width: 0;
+    background: #4F8BFF;
+    box-shadow:
+        -1px -1px 5px 0px #fff,
+        7px 7px 20px 0px #0003,
+        4px 4px 5px 0px #0002;
+    transition: 400ms ease all;
+}
+
+.back-button:after {
+    right: inherit;
+    top: inherit;
+    left: 0;
+    bottom: 0;
+}
+
+.back-button:hover:before,
+.back-button:hover:after {
+    width: 100%;
+    transition: 800ms ease all;
+}
+
+.Address-email-row {
+    display: flex;
+    align-items: flex-start;
+}
+
+.address-details {
+    margin-bottom: 0.5rem;
+    flex: 1;
+    margin-left: 10px;
+}
+
+.address-title {
+    margin-top: 0rem;
+    margin-bottom: 0.5rem;
+    flex: 1;
+    font-size: 18px;
+    margin-left: -10px;
+    font-weight: 600;
+}
+
+.address-input {
+    width: 99%;
+    padding: 0.7rem;
+    border: 1px solid #4F8BFF;
+    border-radius: 4px;
+    transition: border-color 0.3s ease;
+    margin-left: -10px;
+    flex: 1;
+}
+
+.address-choice-select {
+    width: 99%;
+    padding: 0.7rem;
+    border: 1px solid #4F8BFF;
+    border-radius: 4px;
+    transition: border-color 0.3s ease;
+    margin-left: -10px;
+    flex: 1;
+}
+
+.Address-email-row {
+    display: flex;
+    align-items: flex-start;
+}
+
+.email-choice-select {
+    width: 100%;
+    padding: 0.7rem;
+    border: 1px solid #4F8BFF;
+    border-radius: 4px;
+    transition: border-color 0.3s ease;
+    margin-left: 0px;
+    flex: 1;
+}
+
+.email-details {
+    margin-bottom: 0.5rem;
+    flex: 1;
+    margin-left: 10px;
+}
+
+.email-title {
+    margin-top: 0rem;
+    margin-bottom: 0.5rem;
+    flex: 1;
+    font-size: 18px;
+    margin-left: 0px;
+    font-weight: 600;
+}
+
+.input-email-name {
+    width: 100%;
+    padding: 0.7rem;
+    border: 1px solid #4F8BFF;
+    border-radius: 4px;
+    transition: border-color 0.3s ease;
+    margin-left: 0px;
+    flex: 1;
+}
+
+.occasion-details {
+    margin-bottom: 0.5rem;
+    flex: 1;
+    margin-left: 10px;
+}
+
+.occasion-title {
+    margin-top: 0rem;
+    margin-bottom: 0.5rem;
+    flex: 1;
+    font-size: 18px;
+    margin-left: -10px;
+}
+
+.input-anniversary-date {
+    width: 99%;
+    padding: 0.7rem;
+    border: 1px solid #4F8BFF;
+    border-radius: 4px;
+    transition: border-color 0.3s ease;
+    margin-left: -10px;
+    flex: 1;
+}
+
+.select-anniversary-choice {
+    width: 99%;
+    padding: 0.7rem;
+    border: 1px solid #4F8BFF;
+    border-radius: 4px;
+    transition: border-color 0.3s ease;
+    margin-left: -10px;
+    flex: 1;
+}
+
+.relation-details {
+    margin-bottom: 0.5rem;
+    flex: 1;
+    margin-left: 10px;
+}
+
+.anniversary-relationship-row {
+    display: flex;
+    align-items: flex-start;
+}
+
+.relation-title {
+    margin-top: 0rem;
+    margin-bottom: 0.5rem;
+    flex: 1;
+    font-size: 18px;
+    margin-left: 0px;
+    font-weight: 600;
+}
+
+.relationship-details {
+    margin-bottom: 0.5rem;
+    flex: 1;
+    margin-left: 10px;
+}
+
+.select-relationship-choice {
+    width: 100%;
+    padding: 0.7rem;
+    border: 1px solid #4F8BFF;
+    border-radius: 4px;
+    transition: border-color 0.3s ease;
+    margin-left: 0px;
+
+}
