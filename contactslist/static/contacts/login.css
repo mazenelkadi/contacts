@@ -1,4 +1,11 @@
 /* Login Container */
+.logo {
+    max-width: 100px;
+    display: block;
+    margin: 0 auto;
+    margin-bottom: 10px;
+}
+
 .login-container {
     display: flex;
     justify-content: center;
